@@ -1,0 +1,9 @@
+# WTF
+lib/glad/**/*.c linguist-generated
+lib/glad/**/*.h linguist-generated
+
+**/*glut*/**/*.c linguist-generated
+lib/**/*.h linguist-generated
+
+
+*.dll binary
