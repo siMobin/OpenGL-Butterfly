@@ -6,11 +6,13 @@
 #include "helper/const.h"
 #include "helper/cgl.h"
 #include "helper/draw.h"
-#include "helper/butterfly.h"
-#include "helper/tablefan.h"
-#include "helper/star.h"
 
-void disp();
+// Modules
+#include "module/butterfly.h"
+#include "module/tablefan.h"
+#include "module/star.h"
+
+void display();
 void idle();
 void displayStars(int);
 void keyboard(unsigned char, int, int);
@@ -33,8 +35,8 @@ int main(int argc, char **argv)
 	glutInit(&argc, argv);
 	glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
-	glutCreateWindow("CG Demo");
-	glutDisplayFunc(disp);
+	glutCreateWindow("Module Based OpenGL Project");
+	glutDisplayFunc(display);
 	glutPassiveMotionFunc(passiveMouse);
 	glutKeyboardFunc(keyboard);
 	glutIdleFunc(idle);
@@ -47,7 +49,7 @@ int main(int argc, char **argv)
  * Main Display Function
  * @returns void
  */
-void disp()
+void display()
 {
 	/// Intialize Window Properties
 	CGL_Init3D(-HALF_SCREEN_WIDTH, HALF_SCREEN_WIDTH, -HALF_SCREEN_HEIGHT, HALF_SCREEN_HEIGHT, 0, 10);

@@ -1,3 +1,4 @@
+#include <GL/gl.h>
 
 // Number of stars
 const int STARS_COUNT = 100;
@@ -36,9 +37,6 @@ void drawStars()
 				RANDOM_POS_X[i] = (rand() % 20);
 				RANDOM_POS_Y[i] = (rand() % 20);
 
-				Color.red = 0.9;
-				Color.green = 0.9;
-				Color.blue = 0.9;
 				do
 				{
 					RANDOM_SIZE[i] = (rand() % 100) * 0.01;
@@ -60,7 +58,6 @@ void drawStars()
 			glPopMatrix();
 		}
 		STARS_DISPLAY_NOW = false;
-		// glutPostRedisplay();
 	}
 }
 
